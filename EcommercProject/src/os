@@ -1,0 +1,179 @@
+pcbarr[100]
+
+quere[5,7,2,1]
+
+pcbarr[queue.pop()]
+
+PCB{
+    Process ID 
+    Process priority
+    Process size (code+data+segment)
+    Process File name
+    General Purpose Registers  gpr= new GPR()
+    Special Purpose Registers  spr =  new SPR()
+
+    constructor(processId, priority, size, filename){
+
+    Process ID 
+    Process priority
+    Process size (code+data+segment)
+    Process File name
+    General Purpose Registers  gpr= new GPR()
+    Special Purpose Registers  spr =  new SPR()
+    }
+
+    updatePCB(gpr, spr){
+
+    }
+
+    getGpr(){
+
+    }
+
+    getSpr(){
+
+    }
+}
+
+create new PCB(123,2,200, 'a');
+
+memory[65535]
+
+memory{ 
+    reserved for queue = 2
+    kernelstackstart = 65400
+    kernelstackoffset = 80
+    addpcb(pcb){
+        kernelstackstart-80
+        65400-80 = 65320
+        65320 --  65300
+        memory[65300 + 1] = 
+        memory[65300 + 2] 
+        memory[65300 + 1] 
+        memory[65300 + 1] 
+        memory[65300 + 1] 
+        kernelstackoffset += 20
+    }
+}
+
+65320 
+65319 = priority;
+65318 = processid[0];
+65317 = processid[1];
+65316 = datasize[0];
+65315 = datasize[1];
+65316 = datasize[0];
+65315 = datasize[1];
+65300
+
+1st byte: priority.
+2nd & 3rd byte: Process ID (PID)
+4th & 5th byte: datasize 
+6th to 37th byte: gpr
+
+
+
+20 bytes
+
+
+kernel stack {
+    stackStart = 950;
+    stackValues =  80;
+    
+    stackvalues++;
+}
+
+
+pcb 2
+
+stackstart + 2 * 20
+= 990
+990 - 110
+
+goToNextProcess(){
+    go to the kernel
+    go to a queue
+}
+
+[1,5,7,8]
+execute 1
+pause 1 and go to next process
+add process to queue end
+[5,7,8,1]
+execute 5
+pause 5 and go to next process
+add process to queue end
+[7,8,1,5]
+
+
+
+do a Process
+stop Process
+update the pcb with the current state values
+go to the kernel and go to the next Process
+extract info from pcb for process 2 and update registers;
+continue execution
+
+rr
+[2,5,6,7]
+[5,6,7,2]
+
+sjf
+[2,6,5,7]
+[]
+
+p1 80 - 80s
+p2 200 - 200s
+p3 40 - 40s
+
+
+
+
+
+160 s
+p3 40 - 40s
+p1 80 - 80s
+p2 200 - 200s
+p2 40 , 160
+
+
+
+
+40s
+p2 160
+
+
+sjf for 16 secs
+
+[6,1,3,4,5,7]
+[6,1]
+rr
+[3,4,5,7]
+
+
+
+roundrobin(){
+
+}
+
+sjf(){
+
+}
+
+[1,3,5,7,1,2,5]
+multilevelqueining(){
+
+
+}
+
+read a file,
+create a process control Block based on first 8 bytes of file, well place it in kernel 
+
+
+[65535]
+
+
+
+65535 - 200 bytes just for the queue
+n bytes for the stack 
+

@@ -1,0 +1,52 @@
+
+
+ insert into userinfo values('asa',a)
+ alter table userinfo modify Email varchar(50) not null unique;
+ alter table userinfo modify password varchar(50) not null;
+ alter table userinfo modify firstname varchar(50) not null;
+ alter table userinfo modify lastName varchar(50) not null;
+ alter table userinfo modify role varchar(50) not null;
+ alter table userinfo add constraint noNUll check ( Email != 'null' and password != 'null' and firstname != 'null' and lastName != 'null' and role!= 'null' );
+
+ALTER TABLE userinfo
+ADD CONSTRAINT chk_email CHECK(email LIKE '%_@__%.__%')
+
+
+SELECT * FROM userinfo WHERE email REGEXP '[a-z]*';
+SELECT * FROM userinfo WHERE email REGEXP '[a-z]*';
+SELECT * FROM userinfo WHERE firstname REGEXP '[a-z]';
+SELECT * FROM userinfo WHERE userid REGEXP '[A-Za-z]';
+SELECT * FROM userinfo WHERE userid REGEXP '[0-9]{2}';
+SELECT * FROM userinfo WHERE firstname REGEXP 'gmail*';
+
+
+'insert into orderedby values((select userid from userinfo where email= (select email from session limit 1)),null);
+insert into orders (orderid, prodID, quantity)select (select orderid from orderedby order by orderid desc limit 1), prodId, quantity from cart;'
+
+
+insert into orders values(12
+
+select userid from userinfo where email= (select email from session limit 1)"
+
+CREATE SEQUENCE SEQ;
+
+CREATE OR REPLACE TRIGGER AUTONUMBERORDERS
+  2  BEFORE INSERT ON orders
+  3  FOR EACH ROW
+  4  BEGIN
+  5     SELECT SEQ.NEXTVAL
+  6     INTO :NEW.myTableID FROM DUAL;
+  7  END;
+  8  /
+
+
+INSERT INTO orders (orderid)
+SELECT distinct orderid
+FROM receipt
+
+ALTER TABLE products
+ADD FOREIGN KEY (userid) REFERENCES userinfo(userid);
+
+ALTER TABLE orders RENAME receipt; 
+
+
